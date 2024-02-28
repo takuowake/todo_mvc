@@ -3,6 +3,10 @@ import 'package:todo_app/models/todo_list.dart';
 class TodoController {
   final TodoList todoList = TodoList();
 
+  void dispose() {
+    // 現在は何も解放するリソースがないので空
+  }
+
   void addTodo(String title) {
     todoList.addTodo(title);
   }
@@ -11,7 +15,7 @@ class TodoController {
     todoList.todos[index].toggleCompleted();
   }
 
-  void deleteTodo(int index) {
-    todoList.deleteTodo(index);
+  void deleteTodo(int id) {
+    todoList.deleteTodo(id);
   }
 }

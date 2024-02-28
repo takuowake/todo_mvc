@@ -13,6 +13,12 @@ class _TodoAppViewState extends State<TodoAppView> {
   final _controller = TodoController();
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
