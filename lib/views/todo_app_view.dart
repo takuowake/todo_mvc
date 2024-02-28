@@ -26,14 +26,14 @@ class _TodoAppViewState extends State<TodoAppView> {
       ),
       body: TodoListView(
         todos: _controller.todoList.todos,
-        onToggle: (index) {
+        onToggle: (id) {
           setState(() {
-            _controller.toggleTodo(index);
+            _controller.toggleTodo(id);
           });
         },
-        onDelete: (index) {
+        onDelete: (id) {
           setState(() {
-            _controller.deleteTodo(index);
+            _controller.deleteTodo(id);
           });
         },
       ),
