@@ -11,7 +11,7 @@ class TodoController {
     todoList.todos[index].toggleCompleted();
   }
 
-  void deleteTodo(int id) {
-    todoList.deleteTodo(id);
+  void deleteTodo(int index) {
+    todoList.deleteTodo(index);
   }
 }

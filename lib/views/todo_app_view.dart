@@ -11,13 +11,6 @@ class TodoAppView extends StatefulWidget {
 
 class _TodoAppViewState extends State<TodoAppView> {
   final _controller = TodoController();
-  final TextEditingController textEditingController = TextEditingController();
-
-  @override
-  void dispose() {
-    textEditingController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +41,7 @@ class _TodoAppViewState extends State<TodoAppView> {
   }
 
   void _showAddTodoDialog(BuildContext context) {
+    final textEditingController = TextEditingController();
     showDialog(
       context: context,
       builder: (context) {
