@@ -18,6 +18,7 @@ class TodoList {
     saveTodos();
   }
 
+  /// 指定されたidのTodoの完了状態を切り替え
   void toggleCompleted(int id) {
     Todo? todo;
     try {
