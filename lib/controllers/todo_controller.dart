@@ -19,4 +19,12 @@ class TodoController {
   void deleteTodo(int id) {
     todoList.deleteTodo(id);
   }
+
+  Future<void> loadTodos() async {
+    await todoList.loadTodos();
+  }
+
+  Future<void> saveTodos() async {
+    await todoList.saveTodos();
+  }
 }
