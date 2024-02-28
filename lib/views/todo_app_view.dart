@@ -13,8 +13,18 @@ class _TodoAppViewState extends State<TodoAppView> {
   final _controller = TodoController();
 
   @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
+
+  Future<void> _loadData() async {
+    await _controller.loadTodos();
+    setState(() {});
+  }
+
+  @override
   void dispose() {
-    _controller.dispose();
     super.dispose();
   }
 
@@ -38,15 +48,16 @@ class _TodoAppViewState extends State<TodoAppView> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _showAddTodoDialog(context);
+        onPressed: () async {
+          await _showAddTodoDialog(context);
+          await _controller.saveTodos();
         },
         child: const Icon(Icons.add),
       ),
     );
   }
 
-  void _showAddTodoDialog(BuildContext context) {
+  Future<void> _showAddTodoDialog(BuildContext context) async {
     final textEditingController = TextEditingController();
     showDialog(
       context: context,
