@@ -11,8 +11,9 @@ class TodoController {
     todoList.addTodo(title);
   }
 
-  void toggleTodo(int index) {
-    todoList.todos[index].toggleCompleted();
+  void toggleTodo(int id) {
+    final todo = todoList.todos.firstWhere((todo) => todo.id == id);
+    todo.toggleCompleted();
   }
 
   void deleteTodo(int id) {

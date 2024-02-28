@@ -19,14 +19,14 @@ class TodoListView extends StatelessWidget {
             value: todos[index].isCompleted,
             onChanged: (bool? value) {
               if (value != null) {
-                onToggle(index);
+                onToggle(todos[index].id);
               }
             },
           ),
           trailing: IconButton(
             icon: const Icon(Icons.delete),
             onPressed: () {
-              onDelete(index);
+              onDelete(todos[index].id);
             },
           ),
         );
