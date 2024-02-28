@@ -25,6 +25,7 @@ class _TodoAppViewState extends State<TodoAppView> {
 
   @override
   void dispose() {
+    _controller.dispose();
     super.dispose();
   }
 
